@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Catequizados Activos{% endblock %}
+{% block content %}
+<h2>Catequizados Activos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Cédula</th>
+      <th>Parroquia</th>
+      <th>Fecha Nacimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in personas %}
+    <tr>
+      <td>{{ p.Nombres }}</td>
+      <td>{{ p.Apellidos }}</td>
+      <td>{{ p.Cedula }}</td>
+      <td>{{ p.ParroquiaId }}</td>
+      <td>{{ p.FechaNacimiento }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

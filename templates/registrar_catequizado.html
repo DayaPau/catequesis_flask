@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Registrar Catequizado{% endblock %}
+{% block content %}
+<h2>Registrar Nuevo Catequizado</h2>
+
+<form method="POST" action="/registrar">
+  <label>ID Persona:</label>
+  <input type="number" name="PersonaId" required><br>
+
+  <label>Nombres:</label>
+  <input type="text" name="Nombres" required><br>
+
+  <label>Apellidos:</label>
+  <input type="text" name="Apellidos" required><br>
+
+  <label>Cédula:</label>
+  <input type="text" name="Cedula" required><br>
+
+  <label>Fecha Nacimiento:</label>
+  <input type="date" name="FechaNacimiento" required><br>
+
+  <label>Parroquia:</label>
+  <select name="ParroquiaId" required>
+    {% for p in parroquias %}
+      <option value="{{ p.ParroquiaId }}">{{ p.Nombre }}</option>
+    {% endfor %}
+  </select><br>
+
+  <label>Tipo de Persona (IdTipoPersona):</label>
+  <input type="number" name="IdTipoPersona" value="19" readonly><br>
+
+  <label>¿Tiene Bautismo?:</label>
+  <input type="checkbox" name="TieneBautismo"><br>
+
+  <label>Teléfono:</label>
+  <input type="text" name="TelefonoPrincipal"><br>
+
+  <button type="submit">Registrar</button>
+</form>
+{% endblock %}

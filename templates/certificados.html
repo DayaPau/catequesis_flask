@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Certificados Emitidos{% endblock %}
+{% block content %}
+<h2>Certificados Emitidos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Código Verificación</th>
+      <th>Fecha Emisión</th>
+      <th>Persona</th>
+      <th>Sacramento ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in certificados %}
+    <tr>
+      <td>{{ c.CertificadoId }}</td>
+      <td>{{ c.CodigoVerificacion }}</td>
+      <td>{{ c.FechaEmision }}</td>
+      <td>{{ c.Persona }}</td>
+      <td>{{ c.SacramentoId }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

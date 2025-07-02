@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Parroquias{% endblock %}
+{% block content %}
+<h2>Parroquias Registradas</h2>
+<ul>
+  {% for p in parroquias %}
+  <li>{{ p.Nombre }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

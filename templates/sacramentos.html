@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Sacramentos Registrados{% endblock %}
+{% block content %}
+<h2>Sacramentos Registrados con Parroquia</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID Registro</th>
+      <th>Catequizando ID</th>
+      <th>Sacramento ID</th>
+      <th>Parroquia</th>
+      <th>Oficiante</th>
+      <th>Fecha Celebración</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in registros %}
+    <tr>
+      <td>{{ r.RegistroId }}</td>
+      <td>{{ r.CatequizandoId }}</td>
+      <td>{{ r.SacramentoId }}</td>
+      <td>{{ r.Parroquia }}</td>
+      <td>{{ r.Oficiante }}</td>
+      <td>{{ r.FechaCelebracion }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

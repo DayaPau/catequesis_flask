@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Inscripciones{% endblock %}
+{% block content %}
+<h2>Inscripciones con Grupo y Nivel</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Catequizando ID</th>
+      <th>Estado</th>
+      <th>Fecha Inscripción</th>
+      <th>Grupo</th>
+      <th>Nivel</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ins in inscripciones %}
+    <tr>
+      <td>{{ ins.CatequizandoId }}</td>
+      <td>{{ ins.Estado }}</td>
+      <td>{{ ins.FechaInscripcion }}</td>
+      <td>{{ ins.Grupo }}</td>
+      <td>{{ ins.Nivel }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

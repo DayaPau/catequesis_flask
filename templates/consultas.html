@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Consultas del Sistema{% endblock %}
+{% block content %}
+<h2>Consultas Principales</h2>
+<ul>
+  <li><a href="{{ url_for('listar_catequizados') }}">✔️ Catequizados Activos</a></li>
+  <li><a href="{{ url_for('inscripciones') }}">✔️ Inscripciones con Grupo y Nivel</a></li>
+  <li><a href="{{ url_for('certificados') }}">✔️ Certificados Emitidos</a></li>
+  <li><a href="{{ url_for('sacramentos') }}">✔️ Sacramentos Registrados con Parroquia</a></li>
+</ul>
+{% endblock %}
